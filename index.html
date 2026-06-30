@@ -26,7 +26,10 @@
         </svg>
         <span class="logo__text">Robinson <strong>Dental Care</strong></span>
       </a>
-
+      <!-- phone number with a baxckground that changes depending on where u are in the scroll(header vs the rest of the body)-->
+      <a href="tel:+14127886684" class="header__phone" style="display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; padding: 0.5rem 1rem; border-radius: 4rem; text-decoration: none; color: #333; font-weight: bold; transition: background-color 0.3s ease;">
+        <span class="header__phone-text">Phone number: (412) <wbr />788-6684</span>
+      </a>
       <nav class="nav" id="nav" aria-label="Main navigation">
         <ul class="nav__list">
           <li><a href="#home" class="nav__link active">Home</a></li>
@@ -306,7 +309,11 @@
             </div>
             <div>
               <span class="contact__panel-label">Hours</span>
-              <strong>Monday – Friday: 8AM – 5PM<br />Saturday: By appointment</strong>
+              <strong>
+                Mon, Tuesday, Thursday: 8:00am–5:00pm<br />
+                Fri: 8:00am–1:00pm<br />
+                Wednesday: Closed
+              </strong>
             </div>
           </li>
           <li>
@@ -376,11 +383,10 @@
       <div class="footer__col">
         <h4 class="footer__col-title">Office Hours</h4>
         <ul class="footer__hours">
-          <li><span>Monday – Friday</span><span>8:00am – 5:00pm</span></li>
-          <li><span>Saturday</span><span>By Appointment</span></li>
-          <li><span>Sunday</span><span>Closed</span></li>
-        </ul>
-        <a href="tel:+14125551234" class="btn btn--outline-light btn--sm footer__phone">(412) 555-1234</a>
+          <li><span>Monday, Tuesday, Thursday</span><span>8:00am – 5:00pm</span></li>
+          <li><span>Friday</span><span>8:00am – 1:00pm</span></li>
+          <li><span>Wednesday</span><span>Closed</span></li>        </ul>
+        <a href="tel:+14127886684" class="btn btn--outline-light btn--sm footer__phone">(412) 788-6684</a>
       </div>
     </div>
 
