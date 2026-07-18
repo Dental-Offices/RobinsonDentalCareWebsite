@@ -2,19 +2,19 @@
    ROOT VARIABLES & RESET
    ============================================= */
 :root {
-  --clr-primary: #1a6b6b;
-  --clr-primary-dark: #124e4e;
-  --clr-primary-light: #2da8a8;
-  --clr-accent: #4ecdc4;
-  --clr-accent-light: #a8e6e3;
-  --clr-dark: #0f2020;
-  --clr-dark-2: #1c3535;
-  --clr-text: #2d4a4a;
-  --clr-text-muted: #5a7a7a;
-  --clr-border: #d4eaea;
-  --clr-bg: #f7fefe;
+  --clr-primary: #2d5a8c;
+  --clr-primary-dark: #1f3f5a;
+  --clr-primary-light: #4a7ba7;
+  --clr-accent: #00a8e8;
+  --clr-accent-light: #7dd3fc;
+  --clr-dark: #0f172e;
+  --clr-dark-2: #1a2a47;
+  --clr-text: #1f3a5f;
+  --clr-text-muted: #546b82;
+  --clr-border: #d0e1f0;
+  --clr-bg: #f7fbfe;
   --clr-white: #ffffff;
-  --clr-surface: #eef8f8;
+  --clr-surface: #eef6fb;
 
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -349,7 +349,7 @@ svg { flex-shrink: 0; }
   position: absolute;
   inset: 0;
   background:
-    url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80')
+    url('https://mdaquest.org/wp-content/uploads/2023/04/iStock-dentist-office-scaled-e1682524249428.jpg')
     center / cover no-repeat;
   transform: scale(1.04);
   transition: transform 8s ease-out;
@@ -604,7 +604,7 @@ svg { flex-shrink: 0; }
 .about__photo--main {
   inset: 0;
   background:
-    url('https://images.unsplash.com/photo-1588776814546-ec7e8c8d3f91?auto=format&fit=crop&w=800&q=80')
+    url('https://www.mainlinefamilydentistry.com/wp-content/uploads/2022/03/about-our-office-1024x684.jpg')
     center / cover no-repeat;
 }
 
@@ -1034,6 +1034,135 @@ body.service-page .hero__eyebrow {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* =============================================
+   SERVICE ARTICLE & FAQ
+   ============================================= */
+.service-faq {
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+.service-faq h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--clr-dark);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.faq-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.faq-item p {
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.service-article {
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+.service-article h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--clr-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+}
+
+.service-article h2:first-child {
+  margin-top: 0;
+}
+
+.service-article h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--clr-primary-dark);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  line-height: 1.25;
+}
+
+.service-article p {
+  color: var(--clr-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.service-article p:last-child {
+  margin-bottom: 0;
+}
+
+.service-article ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.service-article li {
+  margin-bottom: 0.5rem;
+}
+
+.service-article hr {
+  border: none;
+  border-top: 1px solid var(--clr-border);
+  margin: 2.5rem 0;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
+  color: var(--clr-white);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.cta-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--clr-white);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.cta-section p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.cta-section .btn {
+  display: inline-flex;
 }
 
 /* =============================================
