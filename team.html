@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Team | Robinson Dental Care</title>
+  <meta name="description" content="Meet the compassionate dental team at Robinson Dental Care in McKees Rocks, PA — Dr. Lutfiie Abliaieva and Dr. Meer Ahmed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Team page specific styles ── */
+    .team-hero {
+      position: relative;
+      padding: 7rem 0 5rem;
+      background: linear-gradient(135deg, var(--clr-primary-dark, #0d3d56) 0%, var(--clr-primary, #1a6b8a) 100%);
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .team-hero__eyebrow {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 1rem;
+    }
+    .team-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .team-hero__text {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+    }
+
+    /* ── Doctor cards ── */
+    .team-section {
+      padding: 5rem 0 6rem;
+      background: #fafafa;
+    }
+    .doctor-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: start;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    .doctor-card:last-child {
+      margin-bottom: 0;
+    }
+    .doctor-card--reverse {
+      grid-template-columns: 1fr 300px;
+    }
+    .doctor-card__photo-wrap {
+      position: relative;
+      min-height: 420px;
+      background: #e8f0f5;
+      overflow: hidden;
+    }
+    .doctor-card--reverse .doctor-card__photo-wrap {
+      order: 2;
+    }
+    .doctor-card__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+    .doctor-card__placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #d0e8f2 0%, #b8d8e8 100%);
+    }
+    .doctor-card__placeholder svg {
+      width: 100px;
+      height: 100px;
+      opacity: 0.35;
+      color: #1a6b8a;
+    }
+    .doctor-card__body {
+      padding: 2.5rem 2.5rem 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .doctor-card--reverse .doctor-card__body {
+      padding: 2.5rem 0 2.5rem 2.5rem;
+    }
+    .doctor-card__name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #0d3d56;
+      margin: 0;
+    }
+    .doctor-card__credential {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a6b8a;
+      margin: 0;
+    }
+    .doctor-card__bio p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #444;
+      margin: 0 0 0.85rem;
+    }
+    .doctor-card__bio p:last-child {
+      margin-bottom: 0;
+    }
+    .doctor-card__memberships {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.75rem;
+      background: #e8f4fb;
+      color: #0d6e91;
+      border-radius: 2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* ── CTA band ── */
+    .team-cta-band {
+      background: linear-gradient(135deg, #0d3d56 0%, #1a6b8a 100%);
+      color: #fff;
+      padding: 4rem 0;
+    }
+    .team-cta-band__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .team-cta-band__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0;
+    }
+    .team-cta-band__text {
+      max-width: 520px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .team-cta-band__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .doctor-card,
+      .doctor-card--reverse {
+        grid-template-columns: 1fr;
+      }
+      .doctor-card__photo-wrap {
+        min-height: 280px;
+        position: relative;
+      }
+      .doctor-card--reverse .doctor-card__photo-wrap {
+        order: 0;
+      }
+      .doctor-card__body,
+      .doctor-card--reverse .doctor-card__body {
+        padding: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="service-page">
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <svg class="logo__icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="currentColor">
+            <path d="M386.504,156.575c-19.34-15.092-38.896-20.3-56.195-20.19c-13.232,0.017-25.064,2.706-35.536,5.081 c-10.48,2.436-19.632,4.481-27.221,4.448c-7.575,0.034-16.723-2.012-27.207-4.448c-10.472-2.376-22.304-5.064-35.532-5.081 c-17.303-0.11-36.86,5.09-56.199,20.198c-14.36,11.067-24.785,25.576-31.35,42.148c-6.591,16.588-9.483,35.188-9.491,55.193 c0.016,30.64,6.764,64.722,18.486,100.909c12.104,37.336,22.477,64.789,30.15,84.751c3.826,9.968,6.975,18.068,9.284,24.468 c2.312,6.358,3.75,11.11,4.228,13.756c1.886,10.23,6.612,18.93,13.354,24.966c6.718,6.037,15.329,9.241,23.94,9.225 c8.895,0.008,17.747-3.365,24.815-9.58c7.098-6.214,12.362-15.185,14.898-26.041c0.74-3.187,1.21-6.536,1.679-10.306 c0.802-6.561,1.513-14.323,2.528-22.304c1.484-11.93,3.86-24.409,7.398-32.45c1.712-4.034,3.669-6.781,5.132-8.049 c1.544-1.268,2.08-1.471,3.889-1.573c1.421,0.042,1.987,0.254,2.943,0.828c1.603,0.931,4.35,4.254,6.59,9.968 c3.45,8.464,5.682,21.095,7.111,32.983c0.736,5.952,1.311,11.752,1.886,16.96c0.604,5.25,1.15,9.782,2.109,13.942 c2.541,10.856,7.788,19.827,14.89,26.041c7.068,6.232,15.933,9.588,24.824,9.58c8.611,0.016,17.222-3.188,23.94-9.233 c6.747-6.028,11.46-14.728,13.355-24.958c0.481-2.647,1.918-7.398,4.227-13.756c6.954-19.294,21.298-53.274,39.433-109.219 c11.727-36.179,18.47-70.269,18.478-100.909c0-19.996-2.892-38.605-9.482-55.193C411.281,182.159,400.856,167.643,386.504,156.575z"/>
+            <path d="M461.165,59.632l-43.593-11.55c-1.141-0.254-2.072-1.167-2.317-2.317L403.757,2.173 C403.452,0.905,402.328,0,401.018,0c-1.311,0-2.436,0.905-2.74,2.173l-11.49,43.592c-0.262,1.15-1.184,2.063-2.325,2.317 l-43.593,11.55c-1.276,0.254-2.181,1.386-2.181,2.697c0,1.311,0.905,2.443,2.181,2.688l43.593,11.558 c1.141,0.237,2.062,1.167,2.325,2.317l11.49,43.585c0.304,1.276,1.429,2.181,2.74,2.181c1.31,0,2.434-0.905,2.739-2.181 l11.498-43.585c0.245-1.15,1.176-2.08,2.317-2.317l43.593-11.558c1.277-0.245,2.182-1.378,2.182-2.688 C463.346,61.018,462.442,59.886,461.165,59.632z"/>
+            <path d="M268.72,255.75l-39.809-10.551c-1.044-0.228-1.89-1.066-2.114-2.114l-10.501-39.805 c-0.279-1.158-1.306-1.987-2.502-1.987c-1.197,0-2.224,0.829-2.503,1.987l-10.492,39.805c-0.236,1.048-1.078,1.886-2.122,2.114 l-39.81,10.551c-1.166,0.229-1.99,1.268-1.99,2.461c0,1.201,0.824,2.232,1.99,2.46l39.81,10.551 c1.044,0.22,1.886,1.066,2.122,2.114l10.492,39.805c0.279,1.167,1.306,1.987,2.503,1.987c1.196,0,2.223-0.82,2.502-1.987 l10.501-39.805c0.224-1.048,1.07-1.894,2.114-2.114l39.809-10.551c1.167-0.228,1.991-1.26,1.991-2.46 C270.711,257.018,269.887,255.979,268.72,255.75z"/>
+            <path d="M109.731,130.72l33.756-8.945c0.989-0.195,1.686-1.065,1.686-2.088c0-1.006-0.698-1.894-1.686-2.088 l-33.756-8.945c-0.883-0.195-1.602-0.905-1.792-1.792l-8.903-33.752c-0.236-0.981-1.107-1.682-2.122-1.682 c-1.014,0-1.886,0.701-2.122,1.682l-8.895,33.752c-0.203,0.888-0.917,1.598-1.801,1.792l-33.756,8.945 c-0.99,0.194-1.686,1.082-1.686,2.088c0,1.024,0.697,1.894,1.686,2.088l33.756,8.945c0.884,0.186,1.598,0.905,1.801,1.792 l8.895,33.752c0.236,0.989,1.108,1.682,2.122,1.682c1.015,0,1.886-0.694,2.122-1.682l8.903-33.752 C108.129,131.625,108.848,130.906,109.731,130.72z"/>
+          </g>
+        </svg>
+        <span class="logo__text">Robinson <strong>Dental Care</strong></span>
+      </a>
+      <a href="tel:+14127886684" class="header__phone" style="display: flex; align-items: center; justify-content: center; background-color: #f5f5f5; padding: 0.5rem 1rem; border-radius: 4rem; text-decoration: none; color: #333; font-weight: bold; transition: background-color 0.3s ease;">
+        <span class="header__phone-text">Phone number: (412) <wbr />788-6684</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li class="nav__item--dropdown">
+            <a href="index.html#services" class="nav__link">Services
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="nav__dropdown">
+              <li><a href="./services/checkup-and-cleaning.html">Checkup &amp; Cleaning</a></li>
+              <li><a href="./services/cosmetic-dentistry.html">Cosmetic Procedures</a></li>
+              <li><a href="./services/restorative-dentistry.html">Restorative Procedures</a></li>
+              <li><a href="./services/dental-implants.html">Dental Implants</a></li>
+              <li><a href="./services/oral-surgery.html">Oral Surgery</a></li>
+              <li><a href="./services/dentures.html">Dentures</a></li>
+              <li><a href="./services/pediatric-dentistry.html">Pediatric Dentistry</a></li>
+            </ul>
+          </li>
+          <li><a href="team.html" class="nav__link active" style="white-space: nowrap;">Our Team</a></li>
+          <li><a href="index.html#contact" class="nav__link">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a href="https://appt.link/meet-with-robinson-U1vsFAFU/robinson-dental-care" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm header__cta">Book Appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="team-hero">
+      <div class="container">
+        <p class="team-hero__eyebrow reveal">Robinson Dental Care</p>
+        <h1 class="team-hero__title reveal" data-delay="100">Meet Our Doctors</h1>
+        <p class="team-hero__text reveal" data-delay="200">Our team of experienced, compassionate dentists is dedicated to providing personalized care that puts your comfort and confidence first.</p>
+      </div>
+    </section>
+
+    <!-- ========== TEAM CARDS ========== -->
+    <section class="team-section">
+      <div class="container">
+
+                <!-- Dr. Meer Ahmed -->
+        <article class="doctor-card doctor-card--reverse reveal" data-delay="100">
+          <div class="doctor-card__body">
+            <p class="doctor-card__credential">General Dentist &bull; DMD, MS</p>
+            <h2 class="doctor-card__name">Dr. Meer Ahmed</h2>
+            <div class="doctor-card__bio">
+              <p>Dr. Meer Ahmed has been in dentistry for the past 15 years. A friendly and dedicated general dentist in Moon Township, PA, Dr. Ahmed enjoys getting to know his patients and takes his passion for dental care and his patients' smiles to heart. He believes in a personalized approach to every patient, establishing a genuine connection and providing excellent individualized care.</p>
+              <p>Before working as a dentist in Moon Township, Dr. Ahmed completed his education in India and pursued higher education from the Royal College of Physicians and Surgeons of Glasgow, UK. He worked and honed his clinical skills in renowned hospitals in Middle Eastern countries. To advance his career, Dr. Ahmed immigrated to the U.S. to study at the University of Pittsburgh School of Dental Medicine, where he completed his Masters and Doctorate degree with many awards and honors.</p>
+              <p>Dr. Ahmed makes every effort to stay on top of current developments in dentistry through continuous education and active membership in several international organizations. His scope of dental expertise encompasses surgical extractions, root canals, crown and bridge treatments, implants, Invisalign, and removable dentures.</p>
+              <p>Dr. Ahmed believes he can make a difference in patients' lives by actively involving them in their treatment decision process and educating them on how to maintain a healthy smile — and a healthy body. When not working, Dr. Ahmed loves to come up with new recipes in the kitchen, travel with his family, and cuddle with his kids.</p>
+            </div>
+            <div class="doctor-card__memberships">
+              <span class="badge">American Dental Association (ADA)</span>
+              <span class="badge">Pennsylvania Dental Association (PDA)</span>
+              <span class="badge">Royal College of Physicians &amp; Surgeons of Glasgow</span>
+              <span class="badge">University of Pittsburgh DMD &amp; MS</span>
+            </div>
+          </div>
+          <div class="doctor-card__photo-wrap">
+            <img src="images/doctor2.jpg" alt="Dr. Meer Ahmed" class="doctor-card__photo" />
+          </div>
+        </article>
+
+        <!-- Dr. Lutfiie Abliaieva -->
+        <article class="doctor-card reveal">
+          <div class="doctor-card__photo-wrap">
+            <img src="images/doctor.PNG" alt="Dr. Lutfiie Abliaieva" class="doctor-card__photo" />
+          </div>
+          <div class="doctor-card__body">
+            <p class="doctor-card__credential">General Dentist &bull; DMD</p>
+            <h2 class="doctor-card__name">Dr. Lutfiie Abliaieva</h2>
+            <div class="doctor-card__bio">
+              <p>Dr. Lutfiie has been passionate about helping people achieve healthy, confident smiles since beginning her dental career in 2012. She earned her first dental degree in Crimea, Ukraine, where she spent three years practicing as a general dentist in an underserved community. Those early experiences taught her the importance of listening to patients, building trust, and providing compassionate, high-quality care to everyone who walks through the door.</p>
+              <p>After moving to the United States, Dr. Abliaieva fulfilled her dream of continuing her dental career by earning her Doctor of Dental Medicine (DMD) degree from the University of Pittsburgh School of Dental Medicine. She combines her international experience with the latest evidence-based techniques to provide personalized care for patients of all ages.</p>
+              <p>Dr. Abliaieva believes that going to the dentist should be a positive and comfortable experience. She takes the time to get to know each patient, answer questions, and explain treatment options so they can feel informed and confident about their oral health. Whether it's a routine checkup, restoring a smile, or helping someone overcome dental anxiety, her goal is to make every visit as stress-free and rewarding as possible.</p>
+              <p>When she's not in the office, Dr. Abliaieva enjoys spending time with family and friends, exploring Pittsburgh's parks and neighborhoods, and discovering new places to travel. She looks forward to welcoming you to the practice and helping you smile with confidence!</p>
+            </div>
+            <div class="doctor-card__memberships">
+              <span class="badge">American Dental Association</span>
+              <span class="badge">Pennsylvania Academy of General Dentistry</span>
+              <span class="badge">University of Pittsburgh DMD</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== CTA BAND ========== -->
+    <section class="team-cta-band">
+      <div class="container team-cta-band__inner reveal">
+        <p class="section-eyebrow" style="color: rgba(255,255,255,0.7);">We'd Love to Meet You</p>
+        <h2 class="team-cta-band__title">Ready to schedule your visit?</h2>
+        <p class="team-cta-band__text">Our doctors look forward to welcoming you and your family. Book your appointment online or give us a call.</p>
+        <div class="team-cta-band__actions">
+          <a href="https://appt.link/meet-with-robinson-U1vsFAFU/robinson-dental-care" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">Book Appointment</a>
+          <a href="tel:+14127886684" class="btn btn--outline-light btn--lg">(412) 788-6684</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col footer__col--brand">
+        <a href="index.html" class="logo logo--light">
+          <svg class="logo__icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="currentColor">
+              <path d="M386.504,156.575c-19.34-15.092-38.896-20.3-56.195-20.19c-13.232,0.017-25.064,2.706-35.536,5.081 c-10.48,2.436-19.632,4.481-27.221,4.448c-7.575,0.034-16.723-2.012-27.207-4.448c-10.472-2.376-22.304-5.064-35.532-5.081 c-17.303-0.11-36.86,5.09-56.199,20.198c-14.36,11.067-24.785,25.576-31.35,42.148c-6.591,16.588-9.483,35.188-9.491,55.193 c0.016,30.64,6.764,64.722,18.486,100.909c12.104,37.336,22.477,64.789,30.15,84.751c3.826,9.968,6.975,18.068,9.284,24.468 c2.312,6.358,3.75,11.11,4.228,13.756c1.886,10.23,6.612,18.93,13.354,24.966c6.718,6.037,15.329,9.241,23.94,9.225 c8.895,0.008,17.747-3.365,24.815-9.58c7.098-6.214,12.362-15.185,14.898-26.041c0.74-3.187,1.21-6.536,1.679-10.306 c0.802-6.561,1.513-14.323,2.528-22.304c1.484-11.93,3.86-24.409,7.398-32.45c1.712-4.034,3.669-6.781,5.132-8.049 c1.544-1.268,2.08-1.471,3.889-1.573c1.421,0.042,1.987,0.254,2.943,0.828c1.603,0.931,4.35,4.254,6.59,9.968 c3.45,8.464,5.682,21.095,7.111,32.983c0.736,5.952,1.311,11.752,1.886,16.96c0.604,5.25,1.15,9.782,2.109,13.942 c2.541,10.856,7.788,19.827,14.89,26.041c7.068,6.232,15.933,9.588,24.824,9.58c8.611,0.016,17.222-3.188,23.94-9.233 c6.747-6.028,11.46-14.728,13.355-24.958c0.481-2.647,1.918-7.398,4.227-13.756c6.954-19.294,21.298-53.274,39.433-109.219 c11.727-36.179,18.47-70.269,18.478-100.909c0-19.996-2.892-38.605-9.482-55.193C411.281,182.159,400.856,167.643,386.504,156.575z"/>
+              <path d="M461.165,59.632l-43.593-11.55c-1.141-0.254-2.072-1.167-2.317-2.317L403.757,2.173 C403.452,0.905,402.328,0,401.018,0c-1.311,0-2.436,0.905-2.74,2.173l-11.49,43.592c-0.262,1.15-1.184,2.063-2.325,2.317 l-43.593,11.55c-1.276,0.254-2.181,1.386-2.181,2.697c0,1.311,0.905,2.443,2.181,2.688l43.593,11.558 c1.141,0.237,2.062,1.167,2.325,2.317l11.49,43.585c0.304,1.276,1.429,2.181,2.74,2.181c1.31,0,2.434-0.905,2.739-2.181 l11.498-43.585c0.245-1.15,1.176-2.08,2.317-2.317l43.593-11.558c1.277-0.245,2.182-1.378,2.182-2.688 C463.346,61.018,462.442,59.886,461.165,59.632z"/>
+              <path d="M268.72,255.75l-39.809-10.551c-1.044-0.228-1.89-1.066-2.114-2.114l-10.501-39.805 c-0.279-1.158-1.306-1.987-2.502-1.987c-1.197,0-2.224,0.829-2.503,1.987l-10.492,39.805c-0.236,1.048-1.078,1.886-2.122,2.114 l-39.81,10.551c-1.166,0.229-1.99,1.268-1.99,2.461c0,1.201,0.824,2.232,1.99,2.46l39.81,10.551 c1.044,0.22,1.886,1.066,2.122,2.114l10.492,39.805c0.279,1.167,1.306,1.987,2.503,1.987c1.196,0,2.223-0.82,2.502-1.987 l10.501-39.805c0.224-1.048,1.07-1.894,2.114-2.114l39.809-10.551c1.167-0.228,1.991-1.26,1.991-2.46 C270.711,257.018,269.887,255.979,268.72,255.75z"/>
+              <path d="M109.731,130.72l33.756-8.945c0.989-0.195,1.686-1.065,1.686-2.088c0-1.006-0.698-1.894-1.686-2.088 l-33.756-8.945c-0.883-0.195-1.602-0.905-1.792-1.792l-8.903-33.752c-0.236-0.981-1.107-1.682-2.122-1.682 c-1.014,0-1.886,0.701-2.122,1.682l-8.895,33.752c-0.203,0.888-0.917,1.598-1.801,1.792l-33.756,8.945 c-0.99,0.194-1.686,1.082-1.686,2.088c0,1.024,0.697,1.894,1.686,2.088l33.756,8.945c0.884,0.186,1.598,0.905,1.801,1.792 l8.895,33.752c0.236,0.989,1.108,1.682,2.122,1.682c1.015,0,1.886-0.694,2.122-1.682l8.903-33.752 C108.129,131.625,108.848,130.906,109.731,130.72z"/>
+            </g>
+          </svg>
+          <span class="logo__text">Robinson <strong>Dental Care</strong></span>
+        </a>
+        <p class="footer__tagline">Your Smile, Our Priority.</p>
+        <p class="footer__address">27 Beaver Grade Rd<br />McKees Rocks, PA 15136</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigate</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Services</h4>
+        <ul class="footer__links">
+          <li><a href="./services/checkup-and-cleaning.html">Checkup &amp; Cleaning</a></li>
+          <li><a href="./services/cosmetic-dentistry.html">Cosmetic Procedures</a></li>
+          <li><a href="./services/restorative-dentistry.html">Restorative Procedures</a></li>
+          <li><a href="./services/dental-implants.html">Dental Implants</a></li>
+          <li><a href="./services/oral-surgery.html">Oral Surgery</a></li>
+          <li><a href="./services/dentures.html">Dentures</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Office Hours</h4>
+        <ul class="footer__hours">
+          <li><span>Monday – Friday</span><span>8:00am – 5:00pm</span></li>
+          <li><span>Saturday</span><span>By Appointment</span></li>
+          <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+        <a href="tel:+14127886684" class="btn btn--outline-light btn--sm footer__phone">(412) 788-6684</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; <span id="year"></span> Robinson Dental Care. All rights reserved.</p>
+        <p>27 Beaver Grade Rd, McKees Rocks, PA 15136</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

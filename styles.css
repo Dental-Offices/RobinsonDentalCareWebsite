@@ -183,7 +183,7 @@ svg { flex-shrink: 0; }
   display: flex;
   align-items: center;
   height: 100%;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 /* Logo */
@@ -1126,6 +1126,10 @@ body.service-page .hero__eyebrow {
 /* =============================================
    MOBILE NAV
    ============================================= */
+@media (max-width: 1100px) {
+  .header__phone { display: none; }
+}
+
 @media (max-width: 900px) {
   .nav {
     position: fixed;
